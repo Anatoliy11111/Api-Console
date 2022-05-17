@@ -1,0 +1,47 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.nameFieldInput {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.input {
+    width: 350px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px 48px 5px 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.input:hover {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.input:focus {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.errorNameFieldInput {
+    display: flex;
+    justify-content: flex-start;
+    color: #CF2C00
+}
+
+.errorInput {
+    width: 350px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px 48px 5px 10px;
+    background: #FFFFFF;
+    border: 1px solid #CF2C00;
+    box-shadow: 0 0 5px rgba(207, 44, 0, 0.5);
+    font-size: 18px;
+    margin-top: 5px;
+}
