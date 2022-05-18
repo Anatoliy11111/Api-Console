@@ -1,28 +1,32 @@
-.ConsolePage{
+.ConsolePage {
     min-width: 100vh;
     height: 100%;
-    overflow: hidden ;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     background-color: #F6F6F6;
 
 }
-.ConsolePage_header{
+
+.ConsolePage_header {
     display: flex;
     justify-content: flex-start;
 
 }
-.ConsolePage_request{
- display: flex;
+
+.ConsolePage_request {
+    display: flex;
 
 
 }
-.ConsolePage_console{
+
+.ConsolePage_console {
     display: flex;
-justify-content: space-around;
+    justify-content: space-around;
     align-items: center;
 }
-.ConsolePage_footer{
+
+.ConsolePage_footer {
     display: flex;
     justify-content: space-between;
     padding: 15px;
