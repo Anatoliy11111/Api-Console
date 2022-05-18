@@ -29,7 +29,7 @@
     "no-console": "off",
     "no-alert": "error",
     "no-debugger": "error",
-    "no-plusplus": "error",
+    "no-plusplus": "off",
     "no-unused-vars": "off",
     "no-magic-numbers": "off",
     "default-param-last": "off",
