@@ -1,0 +1,6 @@
+.api_console{
+    min-width: 600px;
+    height: 80vh;
+    border-radius: 3px;
+    font-family: monospace;
+}
