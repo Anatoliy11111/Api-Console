@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import style from './LoginPage.module.css';
 
 import { isAuth } from 'Api/Auth-api';
 import { ButtonSend, FieldInput } from 'components/common';
-import { getErrorAuth, getErrorText } from 'Redux/selectors';
+import { getErrorAuth, getErrorText, getStatusIsLogin } from 'Redux/selectors';
 
 export const LoginPage = () => {
   const errorStatus = useSelector(getErrorAuth);
   const errorText = useSelector(getErrorText);
+  const isLogin = useSelector(getStatusIsLogin);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLogin) {
+      navigate('/consolePage');
+    }
+  });
+
   const formik = useFormik({
     initialValues: {
       email: '',

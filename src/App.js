@@ -1,8 +1,8 @@
 import './App.css';
-import { LoginPage } from 'components/Login/LoginPage';
+import { RoutesMenu } from 'components';
 
 export const App = () => (
   <div className="App">
-    <LoginPage />
+    <RoutesMenu />
   </div>
 );
