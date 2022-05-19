@@ -2,7 +2,9 @@ import React, { useCallback, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import format from '../common/image/align-right.svg';
 import frame from '../common/image/Frame 26.svg';
+import logo from '../common/image/LOGO.svg';
 
 import style from './ConsolePage.module.css';
 
@@ -38,7 +40,9 @@ export const ConsolePage = () => {
   }, [valueRequestField, dispatch]);
   return (
     <div className={style.ConsolePage}>
-      <h1 className={style.ConsolePage_header}> Api-консолька</h1>
+      <div className={style.ConsolePage_header}>
+        <img src={logo} alt="" /> <h1 className={style.ConsolePage_h1}>Api-консолька</h1>
+      </div>
       <div className={style.ConsolePage_request}>
         {' '}
         {!requests.length
@@ -62,9 +66,12 @@ export const ConsolePage = () => {
           onButtonClick={onClickRequestWithField}
         />
         <p>@link-to-your-github</p>
-        <p role="none" onClick={onClickFormat}>
-          Форматировать
-        </p>
+        <div className={style.ConsolePage_footer_format}>
+          <img style={{ marginRight: '10px' }} src={format} alt="" />
+          <p role="none" onClick={onClickFormat}>
+            Форматировать
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -11,22 +11,30 @@
 .ConsolePage_header {
     display: flex;
     justify-content: flex-start;
-    padding-top: 10px;
     margin: 0;
+}
+
+.ConsolePage_h1 {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 0 15px;
 
 }
 
 .ConsolePage_request {
     min-height: 40px;
     display: flex;
-align-items: center;
-
+    align-items: center;
+    border: 2px solid #C4C4C4;
 }
 
 .ConsolePage_console {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    background: #FFFFFF;
+    border-bottom: 2px solid #C4C4C4;
+    padding: 10px;
 }
 
 .ConsolePage_footer {
@@ -34,4 +42,8 @@ align-items: center;
     justify-content: space-between;
     padding: 15px;
 
+}
+.ConsolePage_footer_format{
+    display: flex;
+    cursor: pointer;
 }
