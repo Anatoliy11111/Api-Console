@@ -1,18 +1,25 @@
 import React, { useCallback, useState } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 import frame from '../common/image/Frame 26.svg';
 
 import style from './ConsolePage.module.css';
 
-import { ApiConsole, ButtonSend } from 'components/common';
+import { requestWithField } from 'Api/Auth-api';
+import { ApiConsole, ButtonSend, DropDawn } from 'components/common';
+import { getAllRequests, getAllResponse } from 'Redux/selectors';
 
 export const ConsolePage = () => {
+  console.log('components');
+  const dispatch = useDispatch();
+  const responses = useSelector(getAllResponse);
+  const requests = useSelector(getAllRequests);
   const [valueRequestField, setValueRequestField] = useState('');
-  const onClickFormat = useCallback(() => {
+  const onClickFormat = () => {
     const validValue = ['{', '}', ','];
     const newString = [];
     const str = valueRequestField.split('');
-
     for (let i = 0; i < str.length; i++) {
       if (str[i] === validValue[0] || str[i] === validValue[2]) {
         newString.push(str[i]);
@@ -25,21 +32,35 @@ export const ConsolePage = () => {
       }
     }
     setValueRequestField(newString.join(''));
-  }, [valueRequestField]);
-
+  };
+  const onClickRequestWithField = useCallback(() => {
+    dispatch(requestWithField(valueRequestField));
+  }, [valueRequestField, dispatch]);
   return (
     <div className={style.ConsolePage}>
       <h1 className={style.ConsolePage_header}> Api-консолька</h1>
-      <div className={style.ConsolePage_request} />
+      <div className={style.ConsolePage_request}>
+        {' '}
+        {!requests.length
+          ? '...History Request'
+          : // eslint-disable-next-line react/jsx-key
+            requests.map(req => <DropDawn name={req.action} />)}
+      </div>
       <div className={style.ConsolePage_console}>
         <ApiConsole valueField={valueRequestField} setValueField={setValueRequestField} />
         <div role="none">
           <img src={frame} alt="" />
         </div>
-        <ApiConsole valueField={valueRequestField} />
+        <ApiConsole
+          valueField={responses.length ? JSON.stringify(responses[0], null, 2) : ''}
+        />
       </div>
       <div className={style.ConsolePage_footer}>
-        <ButtonSend name="Отправить" />
+        <ButtonSend
+          disabledButton={!valueRequestField.length}
+          name="Отправить"
+          onButtonClick={onClickRequestWithField}
+        />
         <p>@link-to-your-github</p>
         <p role="none" onClick={onClickFormat}>
           Форматировать
@@ -48,16 +69,3 @@ export const ConsolePage = () => {
     </div>
   );
 };
-// const sendsay = new Sendsay({
-//   apiUrl: 'https://api.sendsay.ru/general/api/v100/json',
-//   auth: {
-//     login: 'canatolij@list.ru',
-//     sublogin: 'x_1652800416165752',
-//     password: 'jo4Joogee',
-//   },
-// });
-// useEffect(() => {
-//   sendsay.request({ action: 'track.get' }).then(res => {
-//     console.log(res);
-//   });
-// }, [sendsay]);
