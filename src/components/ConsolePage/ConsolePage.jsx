@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from 'react';
 
+import frame from '../common/image/Frame 26.svg';
+
 import style from './ConsolePage.module.css';
 
 import { ApiConsole, ButtonSend } from 'components/common';
@@ -31,7 +33,9 @@ export const ConsolePage = () => {
       <div className={style.ConsolePage_request} />
       <div className={style.ConsolePage_console}>
         <ApiConsole valueField={valueRequestField} setValueField={setValueRequestField} />
-        <div>()</div>
+        <div role="none">
+          <img src={frame} alt="" />
+        </div>
         <ApiConsole valueField={valueRequestField} />
       </div>
       <div className={style.ConsolePage_footer}>

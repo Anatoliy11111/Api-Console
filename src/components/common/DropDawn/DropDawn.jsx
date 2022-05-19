@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import frame from '../image/Frame 26.svg';
+
 import style from './DropDawn.module.css';
 
 export const DropDawn = ({ name }) => {
@@ -9,14 +11,13 @@ export const DropDawn = ({ name }) => {
   };
   return (
     <div className={style.drop_dawn_container}>
-      <div
-        onKeyDown={() => {}}
-        role="button"
-        tabIndex={0}
-        className={style.drop_dawn}
-        onClick={onClickOpenMenu}
-      >
+      <div className={style.drop_dawn}>
         {name}
+        <div className={style.drop_dawn_open_menu}>
+          <div role="none" onClick={onClickOpenMenu}>
+            <img src={frame} alt="" />
+          </div>
+        </div>
       </div>
       {active && (
         <div className={style.drop_dawn_action_menu}>
