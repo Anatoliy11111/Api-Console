@@ -1,1 +1,1 @@
-export const getAllRequests = state => state.RequestHistoryReducer;
+export const getAllRequests = state => state.RequestHistoryReducer.request;

@@ -10,5 +10,23 @@ export const reducerRoot = combineReducers({
   ResponseReducer,
   RequestHistoryReducer,
 });
+let preloadedState;
+export const startState = localStorage.getItem('RequestHistoryReducer');
 
-export const store = legacy_createStore(reducerRoot, applyMiddleware(thunk));
+if (startState) {
+  preloadedState = JSON.parse(startState);
+}
+console.log(preloadedState);
+
+export const store = legacy_createStore(
+  reducerRoot,
+  { ...reducerRoot, RequestHistoryReducer: preloadedState },
+  applyMiddleware(thunk),
+);
+
+store.subscribe(() => {
+  localStorage.setItem(
+    'RequestHistoryReducer',
+    JSON.stringify(store.getState().RequestHistoryReducer),
+  );
+});

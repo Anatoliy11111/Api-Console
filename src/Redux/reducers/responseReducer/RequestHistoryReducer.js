@@ -1,4 +1,6 @@
-const initialState = [];
+const initialState = {
+  request: [],
+};
 
 export const RequestHistoryReducer = (state = initialState, action) => {
   const MaxLengthArray = 14;
@@ -8,7 +10,7 @@ export const RequestHistoryReducer = (state = initialState, action) => {
       if (state.length === MaxLengthArray) {
         newState.pop();
       }
-      return [action.request, ...newState];
+      return { ...newState, request: [...newState.request, action.request] };
     }
     default:
       return state;
