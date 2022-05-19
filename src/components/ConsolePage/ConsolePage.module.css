@@ -8,10 +8,27 @@
 
 }
 
+.ConsolePage_header_container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .ConsolePage_header {
     display: flex;
     justify-content: flex-start;
     margin: 0;
+}
+
+.ConsolePage_header_logout {
+    display:flex ;
+    align-items: center;
+    cursor: pointer;
+
+}
+.ConsolePage_header_logout_p{
+    margin: 0;
+    padding: 0 10px;
+    font-size: 16px;
 }
 
 .ConsolePage_h1 {
@@ -43,7 +60,8 @@
     padding: 15px;
 
 }
-.ConsolePage_footer_format{
+
+.ConsolePage_footer_format {
     display: flex;
     cursor: pointer;
 }

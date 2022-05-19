@@ -16,7 +16,6 @@ export const startState = localStorage.getItem('RequestHistoryReducer');
 if (startState) {
   preloadedState = JSON.parse(startState);
 }
-console.log(preloadedState);
 
 export const store = legacy_createStore(
   reducerRoot,

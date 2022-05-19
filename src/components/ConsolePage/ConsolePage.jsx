@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import format from '../common/image/align-right.svg';
 import frame from '../common/image/Frame 26.svg';
-import logo from '../common/image/LOGO.svg';
 
 import style from './ConsolePage.module.css';
 
 import { requestWithField } from 'Api/Auth-api';
 import { ApiConsole, ButtonSend, DropDawn } from 'components/common';
+import { Header } from 'components/ConsolePage/header/Header';
 import { getAllRequests, getAllResponse } from 'Redux/selectors';
 
 export const ConsolePage = () => {
@@ -40,9 +40,7 @@ export const ConsolePage = () => {
   }, [valueRequestField, dispatch]);
   return (
     <div className={style.ConsolePage}>
-      <div className={style.ConsolePage_header}>
-        <img src={logo} alt="" /> <h1 className={style.ConsolePage_h1}>Api-консолька</h1>
-      </div>
+      <Header />
       <div className={style.ConsolePage_request}>
         {' '}
         {!requests.length
