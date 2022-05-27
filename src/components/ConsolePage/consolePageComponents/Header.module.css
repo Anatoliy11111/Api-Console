@@ -1,0 +1,64 @@
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+}
+.header_title {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 0 15px;
+
+}
+.header {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.header_logout_container {
+    display: flex;
+    align-items: center;
+    min-width: 350px;
+    justify-content: space-between;
+}
+
+.header_login {
+    padding: 3px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.header_logout {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header_logout_text {
+    margin: 0;
+    padding: 0 10px;
+    font-size: 16px;
+}
+.header_fullscreen_container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #F6F6F6;
+
+}
+.header_fullscreen_container:active{
+    border: 2px solid #45A5FF;
+    border-radius: 7px;
+    opacity: 0.7;
+}
+.header_fullscreen{
+    width: 20px;
+    height: 24px;
+    background:right url("/src/components/common/image/Vector.svg") no-repeat;
+}
+.header_fullscreen:hover{
+    background: right url("/src/components/common/image/Vector-blur.svg") no-repeat;
+    cursor: pointer;
+}

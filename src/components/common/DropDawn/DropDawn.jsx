@@ -1,38 +1,41 @@
-import React, { useState } from 'react';
-
-import frame from '../image/Frame 26.svg';
+import React, { memo, useState } from 'react';
 
 import style from './DropDawn.module.css';
 
-export const DropDawn = ({ name }) => {
-  const [active, setActive] = useState(false);
-  const onClickOpenMenu = () => {
-    setActive(!active);
-  };
-  return (
-    <div className={style.drop_dawn_container}>
-      <div className={style.drop_dawn}>
-        {name}
-        <div className={style.drop_dawn_open_menu}>
-          <div role="none" onClick={onClickOpenMenu}>
-            <img src={frame} alt="" />
+import { DropDawnSetting } from 'components/common/DropDawn/dropDawnSetting/DropDawnSetting';
+
+export const DropDawn = memo(
+  ({ name, onClickTitle, onClickExecute, onClickCopy, isCopy, onClickDeleteRequest }) => {
+    const [active, setActive] = useState(false);
+    const onClickOpenMenu = () => {
+      setActive(!active);
+    };
+    return (
+      <div className={style.drop_dawn_container}>
+        <div className={style.drop_dawn_title}>
+          <div
+            onKeyDown={() => {}}
+            tabIndex={0}
+            role="button"
+            onClick={onClickTitle}
+            className={isCopy ? style.drop_dawn_is_copy : ''}
+          >
+            {name}
           </div>
+          <div
+            className={style.drop_dawn_button_image}
+            role="none"
+            onClick={onClickOpenMenu}
+          />
         </div>
+        {active && (
+          <DropDawnSetting
+            onClickDeleteRequest={onClickDeleteRequest}
+            onClickCopy={onClickCopy}
+            onClickExecute={onClickExecute}
+          />
+        )}
       </div>
-      {active && (
-        <div className={style.drop_dawn_action_menu}>
-          <div className={style.drop_dawn_action}>
-            <div className={style.drop_dawn_come}>Войти</div>
-          </div>
-          <div className={style.drop_dawn_action}>
-            <div className={style.drop_dawn_copy}>Скопировать</div>
-          </div>
-          <hr className={style.drop_dawn_copy_hr} />
-          <div className={style.drop_dawn_action}>
-            <div className={style.drop_dawn_delete}>Удалить</div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
+    );
+  },
+);

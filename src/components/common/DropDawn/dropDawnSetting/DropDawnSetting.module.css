@@ -1,0 +1,60 @@
+.drop_dawn_action_menu {
+    min-width: 133px;
+    background: #FFFFFF;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    flex: 3;
+    border-radius: 3px;
+    margin: 0;
+    position: absolute;
+    top: 35px;
+    right: 0;
+}
+
+.drop_dawn_action {
+    flex: 1;
+    padding: 5px 0;
+}
+
+.drop_dawn_come {
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0D0D0D;
+    cursor: pointer;
+}
+
+.drop_dawn_copy {
+    width: 100%;
+    padding: 4px 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.drop_dawn_copy:hover {
+    background: #0055FB;
+    color: #FFFFFF;
+}
+
+.drop_dawn_copy_hr {
+    margin: initial;
+}
+
+.drop_dawn_delete {
+    width: 100%;
+    padding: 4px 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.drop_dawn_delete:hover {
+    background: #CF2C00;
+    color: #FFFFFF;
+}

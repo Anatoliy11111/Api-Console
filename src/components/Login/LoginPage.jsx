@@ -4,9 +4,11 @@ import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import logo from '../common/image/LOGO.svg';
+
 import style from './LoginPage.module.css';
 
-import { isAuth } from 'Api/Auth-api';
+import { isAuth } from 'Api/api';
 import { ButtonSend, FieldInput } from 'components/common';
 import { getErrorAuth, getErrorText, getStatusIsLogin } from 'Redux/selectors';
 
@@ -16,13 +18,12 @@ export const LoginPage = () => {
   const isLogin = useSelector(getStatusIsLogin);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   useEffect(() => {
     if (isLogin) {
       navigate('/consolePage');
     }
-  });
-
+  }, [isLogin]);
+  console.log(isLogin);
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -66,8 +67,10 @@ export const LoginPage = () => {
       onChangeFieldInput: formik.handleChange,
     },
   ];
+
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit} className={style.LoginPage_container}>
+      <img src={logo} alt="" className={style.LoginPage_img} />
       <div className={style.LoginPage}>
         <div className={style.LoginPage__form}>
           <h1 className={style.LoginPage__title}>Api-консолька</h1>

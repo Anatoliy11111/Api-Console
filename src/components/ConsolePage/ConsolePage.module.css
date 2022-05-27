@@ -1,67 +1,11 @@
 .ConsolePage {
-    min-width: 100vh;
+    max-width: 1440px;
     height: 100%;
+    background-color: #F6F6F6;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: #F6F6F6;
+    margin: 0 auto;
 
 }
 
-.ConsolePage_header_container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.ConsolePage_header {
-    display: flex;
-    justify-content: flex-start;
-    margin: 0;
-}
-
-.ConsolePage_header_logout {
-    display:flex ;
-    align-items: center;
-    cursor: pointer;
-
-}
-.ConsolePage_header_logout_p{
-    margin: 0;
-    padding: 0 10px;
-    font-size: 16px;
-}
-
-.ConsolePage_h1 {
-    display: flex;
-    justify-content: flex-start;
-    margin: 0 0 0 15px;
-
-}
-
-.ConsolePage_request {
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    border: 2px solid #C4C4C4;
-}
-
-.ConsolePage_console {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #FFFFFF;
-    border-bottom: 2px solid #C4C4C4;
-    padding: 10px;
-}
-
-.ConsolePage_footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-
-}
-
-.ConsolePage_footer_format {
-    display: flex;
-    cursor: pointer;
-}

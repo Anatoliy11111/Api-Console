@@ -1,77 +1,27 @@
 .drop_dawn_container {
-    width: 133px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    position: relative;
+    margin-right: 10px;
 }
 
-.drop_dawn {
-    min-width: 91px;
-    height: 30px;
+.drop_dawn_title {
     background: #FFFFFF;
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    padding: 0 10px;
+    padding: 5px 10px;
+}
+.drop_dawn_is_copy {
+    animation: ani 1s forwards;
+    border-radius: 5px;
+    background-color: #C4C4C4;
 }
 
-.drop_dawn_open_menu {
-    margin-left: 10%;
-    padding-top: 5%;
-}
-
-.drop_dawn_action_menu {
-    min-width: 133px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-    flex: 3;
-    border-radius: 3px;
-    margin: 0;
-}
-
-.drop_dawn_action {
-    background: #FFFFFF;
-    flex: 1;
-}
-
-.drop_dawn_come {
-    width: 100%;
-    margin: 5px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0D0D0D;
-    cursor: pointer;
-}
-
-.drop_dawn_copy {
-    width: 100%;
-    padding: 4px 0;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-
-}
-
-.drop_dawn_copy:hover {
-    background: #0055FB;
-    color: #FFFFFF;
-}
-
-.drop_dawn_copy_hr {
-    margin: initial;
-}
-
-.drop_dawn_delete {
-    width: 100%;
-    padding: 4px 0;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.drop_dawn_delete:hover {
-    background: #CF2C00;
-    color: #FFFFFF;
+.drop_dawn_button_image {
+    background: right 50% url("/src/components/common/image/Frame 26.svg") no-repeat;
+    width: 5px;
+    height: 25px;
+    margin-left: 10px;
 }

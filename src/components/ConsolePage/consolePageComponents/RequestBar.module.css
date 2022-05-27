@@ -1,0 +1,7 @@
+.request_bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 15px;
+    border-top: 2px solid #C4C4C4;
+    border-bottom: 2px solid #C4C4C4;
+}
